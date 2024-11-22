@@ -32,7 +32,7 @@ const Form = () => {
 
     try {
       // Send data to the backend
-      const response = await axios.post("http://localhost:5000/add-row", {
+      const response = await axios.post("https://gog-hiring-form-server.onrender.com/add-row", {
         rowData,
       });
 
