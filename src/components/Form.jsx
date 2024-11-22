@@ -12,9 +12,12 @@ const Form = () => {
   const [designation, setDesignation] = useState("");
   const [hiringProfile, setHiringProfile] = useState("");
   const [source, setSource] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setIsLoading(true);
 
     // Prepare the data to send
     const rowData = [
@@ -32,12 +35,17 @@ const Form = () => {
 
     try {
       // Send data to the backend
-      const response = await axios.post("https://gog-hiring-form-server.onrender.com/add-row", {
-        rowData,
-      });
+      const response = await axios.post(
+        "https://gog-hiring-form-server.onrender.com/add-row",
+        {
+          rowData,
+        }
+      );
+      setIsLoading(false);
 
       navigate("/thank-you");
     } catch (error) {
+      setIsLoading(false);
       console.error("Error adding data:", error);
       alert("An error occurred while submitting the form. Please try again.");
     }
@@ -132,7 +140,7 @@ const Form = () => {
         type="submit"
         className="w-full bg-gradient-to-r from-orange-500 to-green-500 text-white p-3 rounded-md hover:opacity-90"
       >
-        GET IN TOUCH
+        {isLoading ? "SUBMITTING" : "GET IN TOUCH"}
       </button>
     </form>
   );
