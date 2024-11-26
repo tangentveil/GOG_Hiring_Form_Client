@@ -2,7 +2,7 @@ import bgImage from "../assets/job-5382501_1280.jpg";
 
 const InfoSection = () => {
   return (
-    <div className="relative bg-green-100 flex items-center justify-center w-1/2 max-md:hidden">
+    <div className="relative bg-green-100 flex items-center justify-center w-1/2 max-md:hidden h-[600px]">
       {/* Background Image */}
       <img
         src={bgImage}

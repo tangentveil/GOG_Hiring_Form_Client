@@ -54,7 +54,7 @@ const Form = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col shadow-lg rounded-lg bg-white p-6 gap-4 w-1/2 max-md:w-11/12"
+      className="flex flex-col shadow-lg rounded-lg bg-white p-6 gap-4 w-1/2 max-md:w-11/12 z-10"
     >
       <h3 className="text-gray-700 text-xl font-bold mb-6">Get in touch</h3>
       <input
